@@ -85,11 +85,4 @@ public class RosterCreation {
     return ret;
   }
   
-  
-  public static void main (String [] args) {
-    System.out.println(createLeague(4, 1));
-    String[] Stadiums = {"Local Park", "Big Park", "Small Park"};
-    System.out.println(LeagueScheduling.regularSeasonScheduling(7, Stadiums));
-  }
-  
 }
