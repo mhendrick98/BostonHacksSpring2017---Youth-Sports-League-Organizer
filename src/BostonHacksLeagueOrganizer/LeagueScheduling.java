@@ -47,8 +47,6 @@ public class LeagueScheduling {
     //Schedules the games for each week at various stadiums
     String ret = "";
     int stackCounter = 0;
-    int counter = 0;
-    int numberOfTeams = RosterCreation.getNumberOfTeams();
     String[] randomTeams = randomTeamListGenerator();
     LinkedList<String> stackTeams = new LinkedList<String> ();
     while(stackCounter < randomTeams.length)

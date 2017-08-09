@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class RosterCreation {
   public static LinkedList<RosterObject> teamList = new LinkedList<RosterObject>();
-  public static int numberOfTeams = 0;
+  public static int numberOfFullTeams = 0;
   
   public static LinkedList<RosterObject> getTeamList() {
     return teamList;
   }
   
   public static int getNumberOfTeams() {
-    return numberOfTeams;
+    return numberOfFullTeams;
   }
 
 
@@ -51,7 +51,6 @@ public class RosterCreation {
       RosterNode Player = new RosterNode(currentPlayerName, currentPlayerNumber);
       rosterList.offer(Player);
       counter++;
-      numberOfTeams++;
     }
     return createRosterToString(rosterList);
   }
@@ -78,9 +77,10 @@ public class RosterCreation {
       System.out.println("Away Jersey Color?");
       Scanner scanAwayColor = new Scanner(System.in);
       String currentAwayColor = scanAwayColor.nextLine().toUpperCase();
-      teamList.offer(new RosterObject(currentTeamName,roster,currentCoachName, currentHomeColor, currentAwayColor));
       ret = ret + "Team Name:" + currentTeamName + " Coach:" + currentCoachName + " Players:" + roster + " // Home Jersey Color-" + currentHomeColor + " Away Jersey Color-" + currentAwayColor + "\n";
-      counter++; 
+      teamList.offer(new RosterObject(currentTeamName,roster,currentCoachName, currentHomeColor, currentAwayColor));
+      counter++;
+      numberOfFullTeams++;
     }
     return ret;
   }
